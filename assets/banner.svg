@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glowing filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- CSS Keyframe Animations -->
+    <style>
+      @keyframes floatPulse {
+        0%, 100% { transform: translateY(0px) scale(1); opacity: 0.8; }
+        50% { transform: translateY(-8px) scale(1.03); opacity: 1; }
+      }
+
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      @keyframes rotateSpin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.1); }
+      }
+
+      .animated-bg-circle-1 {
+        animation: pulseGlow 6s ease-in-out infinite;
+        transform-origin: 200px 100px;
+      }
+
+      .animated-bg-circle-2 {
+        animation: pulseGlow 8s ease-in-out infinite 2s;
+        transform-origin: 1000px 260px;
+      }
+
+      .tech-card {
+        animation: floatPulse 5s ease-in-out infinite;
+      }
+
+      .tech-card-2 {
+        animation: floatPulse 5s ease-in-out infinite 2.5s;
+      }
+
+      .flowing-path {
+        stroke-dasharray: 8 6;
+        animation: dashFlow 20s linear infinite;
+      }
+
+      .gear-spin {
+        animation: rotateSpin 18s linear infinite;
+        transform-origin: 980px 90px;
+      }
+
+      .badge-pill {
+        transition: all 0.3s ease;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="360" rx="16" fill="url(#bg-grad)" />
+
+  <!-- Animated Glowing Background Orbs (Kept subtle behind content) -->
+  <circle class="animated-bg-circle-1" cx="200" cy="100" r="180" fill="#4f46e5" opacity="0.25" filter="url(#soft-glow)" />
+  <circle class="animated-bg-circle-2" cx="1000" cy="260" r="200" fill="#c084fc" opacity="0.2" filter="url(#soft-glow)" />
+
+  <!-- Background Tech Grid / Circuit Graphics -->
+  <g opacity="0.15" stroke="#94a3b8" stroke-width="1">
+    <path d="M 0,60 L 1200,60 M 0,120 L 1200,120 M 0,180 L 1200,180 M 0,240 L 1200,240 M 0,300 L 1200,300" />
+    <path d="M 150,0 L 150,360 M 300,0 L 300,360 M 450,0 L 450,360 M 600,0 L 600,360 M 750,0 L 750,360 M 900,0 L 900,360 M 1050,0 L 1050,360" />
+  </g>
+
+  <!-- Flowing Dynamic Connection Lines (Low opacity background graphics) -->
+  <path class="flowing-path" d="M 100,280 C 300,320 400,220 600,270 C 800,320 950,220 1100,280" fill="none" stroke="url(#accent-grad)" stroke-width="3" opacity="0.4" />
+  <path class="flowing-path" d="M 50,90 C 250,40 450,140 700,80 C 850,40 1000,120 1150,70" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.4" />
+
+  <!-- Decorative Gear (Top Right) -->
+  <g class="gear-spin" opacity="0.25">
+    <circle cx="980" cy="90" r="35" fill="none" stroke="#a855f7" stroke-width="6" stroke-dasharray="12 8" />
+  </g>
+
+  <!-- Right Side Visual Cards (FSM Metrics & Dispatch Nodes - Styled behind main text block) -->
+  <g class="tech-card" transform="translate(860, 140)" opacity="0.9">
+    <rect width="260" height="75" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1.5" filter="url(#glow)" />
+    <circle cx="35" cy="37" r="18" fill="#10b981" opacity="0.2" />
+    <path d="M 28 37 L 33 42 L 43 32" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="65" y="33" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Technician Dispatched</text>
+    <text x="65" y="52" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11">GPS Route Optimized • 99.4%</text>
+  </g>
+
+  <g class="tech-card-2" transform="translate(820, 235)" opacity="0.9">
+    <rect width="270" height="75" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1.5" filter="url(#glow)" />
+    <circle cx="35" cy="37" r="18" fill="#6366f1" opacity="0.2" />
+    <path d="M 27 30 L 43 30 M 27 37 L 39 37 M 27 44 L 35 44" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" />
+    <text x="65" y="33" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600">Work Orders & Invoicing</text>
+    <text x="65" y="52" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="11">Real-time SaaS & Open-Source</text>
+  </g>
+
+  <!-- MAIN FOREGROUND CONTENT BLOCK (Always on top to guarantee title visibility) -->
+  <g id="foreground" transform="translate(70, 0)">
+    
+    <!-- Top Category Badge Pill -->
+    <g transform="translate(0, 55)">
+      <rect class="badge-pill" width="340" height="34" rx="17" fill="url(#accent-grad)" opacity="0.95" />
+      <text x="170" y="22" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle">
+        ⚡ FIELD SERVICE MANAGEMENT ECOSYSTEM
+      </text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="145" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="900" letter-spacing="-0.5">
+      Awesome Field Service Management
+    </text>
+
+    <!-- Gradient Accent Subtitle Bar -->
+    <rect x="0" y="165" width="620" height="4" rx="2" fill="url(#accent-grad)" />
+
+    <!-- Subtitle Description -->
+    <text x="0" y="205" fill="#cbd5e1" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400">
+      Curated Directory of FSM SaaS Platforms & Open-Source Solutions
+    </text>
+
+    <!-- Feature Pill Tags -->
+    <g transform="translate(0, 240)">
+      <!-- Tag 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="130" height="32" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5" />
+        <text x="65" y="20" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">🚚 Dispatch & Routing</text>
+      </g>
+      <!-- Tag 2 -->
+      <g transform="translate(142, 0)">
+        <rect width="135" height="32" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5" />
+        <text x="67" y="20" fill="#e9d5ff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">📋 Work Orders</text>
+      </g>
+      <!-- Tag 3 -->
+      <g transform="translate(289, 0)">
+        <rect width="145" height="32" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5" />
+        <text x="72" y="20" fill="#a7f3d0" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">📱 Mobile Workforce</text>
+      </g>
+      <!-- Tag 4 -->
+      <g transform="translate(446, 0)">
+        <rect width="145" height="32" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" />
+        <text x="72" y="20" fill="#fde68a" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">🔓 Open-Source CMMS</text>
+      </g>
+    </g>
+
+    <!-- Footer Timestamp Note -->
+    <text x="0" y="310" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="500">
+      Updated September 2026 • Maintained by @ishandutta2007
+    </text>
+
+  </g>
+</svg>
