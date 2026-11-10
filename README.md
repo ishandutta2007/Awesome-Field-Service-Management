@@ -51,6 +51,7 @@ Below is a comparative breakdown of leading commercial Field Service Management 
 | **[Workiz](https://www.workiz.com/)** | **~$90M Valuation**<br>`($20M ARR)` | **$43 / month** | **Free Forever Plan** *(Up to 2 users, basic dispatch)* / 7-day Pro trial | Specialized for lock, carpet, and junk removal service pros with built-in VoIP phone system, scheduling, and job management. |
 | **[FieldEdge](https://www.fieldedge.com/)** | **~$80M Valuation**<br>`($25M ARR)` | **$100 / user / month** | 7-day guided demo *(Hands-on trial environment)* | Deep QuickBooks integration for mechanical, plumbing, and HVAC service contractors requiring field price books and billing. |
 | **[mHelpDesk](https://www.mhelpdesk.com/)** | **~$50M Valuation**<br>`($15M ARR)` | **$169 / month** *(up to 5 users)* | 14-day free trial *(Full features, no credit card required)* | Work order management, customer portal, offline mobile access, and scheduling for field repair teams. |
+| **[Genaya](https://genaya.com/)** | Early-stage, private | **$99 / month** *(per organization)* | Free trial *(Full features)* | All-in-one for service businesses: scheduling & dispatch, CRM, estimates, invoices & payments, AI phone receptionist, iOS & Android apps. |
 
 ---
 
